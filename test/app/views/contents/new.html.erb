@@ -1,0 +1,6 @@
+<%= render 'share/header' %>
+<%= form_for(@content, url: choice_contents_path(@choice)) do |f| %>
+<h2>項目を追加する</h2>
+	<%= f.text_field :item, class:"form-control" %>
+	<%= f.submit '追加する' %>
+<% end %>

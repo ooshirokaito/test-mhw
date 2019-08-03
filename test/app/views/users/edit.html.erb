@@ -1,0 +1,12 @@
+<%= render 'share/header' %>
+<div class="page">
+	<%= form_for(@user) do |f| %>
+		<h2>名前</h2>
+		<h3><%= f.text_field :name %></h3>
+		<h2>メールアドレス</h2>
+		<h3><%= f.email_field :email %></h3>
+		<h2>password</h2>
+		<h3><%= f.text_field :passcode %></h3>
+		<%= f.submit "更新" %>
+	<% end %>
+</div>
