@@ -1,0 +1,10 @@
+<%= render 'share/header' %>
+<div class="page">
+	<h2>名前</h2>
+	<h3><%= @user.name %></h3>
+	<h2>メールアドレス</h2>
+	<h3><%= @user.email %></h3>
+	<h2>パスワード</h2>
+	<h3><%= @user.passcode %></h3>
+	<%= link_to '編集する', edit_user_path(current_user) %>
+</div>
