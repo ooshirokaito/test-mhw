@@ -1,0 +1,17 @@
+<%= render "share/header" %>
+<div class="container">
+	<div class="cow">
+		<div class="col-xs-12">
+			<div class="title">
+				<b class="width">アイテム作成</b>
+			</div>
+			<div class="indent">
+				<%= form_for(@content, url: choice_contents_path(@choice)) do |f| %>
+					<h3>item名</h3>
+					<%= f.text_field :item %></br>
+					<%= f.submit "作成", class: "btn btn-success margin" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

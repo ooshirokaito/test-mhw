@@ -1,0 +1,25 @@
+<%= render "share/header" %>
+<div class="container">
+	<div class="cow">
+		<% if current_user.email == "ore@admin" %>
+			<%= link_to "New", new_choice_path, class: "btn btn-info" %>
+		<% end %>
+		<div class="col-xs-12">
+			<div class="title">
+				<b class="width">ジャンル</b>
+			</div>
+			<% @choices.each do |c| %>
+				<div class="box">
+					<%= link_to choice_contents_path(c), class: "font-size", id: "a-tag" do %>
+						<span class="glyphicon glyphicon-piggy-bank"></span>
+						<%= c.genre %>
+					<% end %>
+					<% if current_user.email == "ore@admin" %>
+						<%= link_to "編集", edit_choice_path(c) %>
+						<%= link_to "削除", choice_path(c), method: :delete %></br>
+					<% end %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

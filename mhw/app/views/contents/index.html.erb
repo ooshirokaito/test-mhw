@@ -1,0 +1,47 @@
+<%= render "share/header" %>
+<div class="back">
+	<div class="container">
+		<% if current_user.email == "ore@admin" %>
+			<%= link_to "New", new_choice_content_path(@choice), class: "btn btn-info" %>
+		<% end %>
+		<div class="cow border">
+			<div class="col-xs-6 right-line">
+				<h2 class="center">所持</h2>
+				<% @contents.each do |c| %>
+					<% if current_user.already_checked?(c) %>
+						<%= link_to choice_content_check_path(@choice.id, c.id, :id), method: :delete, id: "a-tag", class: "font-size" do %>
+
+							<%= render "icon", c: c %>
+
+							<%= c.item %>
+						<% end %>
+						<% if current_user.email == "ore@admin" %>
+							<%= link_to "編集", edit_choice_content_path(@choice.id, c) %>
+							<%= link_to "削除", choice_content_path(@choice.id, c), method: :delete %>
+						<% end %>
+						</br>
+					<% end %>
+				<% end %>
+			</div>
+
+			<div class="col-xs-6">
+				<h2 class="center">未所持</h2>
+				<% @contents.each do |c| %>
+					<% unless current_user.already_checked?(c) %>
+						<%= link_to choice_content_checks_path(@choice.id, c.id), method: :post, id: "a-tag", class: "font-size" do %>
+
+							<%= render "icon", c: c %>
+
+							<%= c.item %>
+						<% end %>
+						<% if current_user.email == "ore@admin" %>
+							<%= link_to "編集", edit_choice_content_path(@choice.id, c) %>
+							<%= link_to "削除", choice_content_path(@choice.id, c), method: :delete %>
+						<% end %>
+						</br>
+					<% end %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

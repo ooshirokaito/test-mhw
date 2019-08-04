@@ -1,0 +1,13 @@
+.border {
+	height: 1000px;
+	border: solid 2px;
+	border-radius: 5%;
+}
+
+.col-xs-6 {
+	height: inherit;
+}
+
+.right-line {
+	border-right: solid 2px;
+}

@@ -1,0 +1,39 @@
+p {
+	font-size:30px;
+}
+
+b {
+	font-size: 50px;
+	padding: 10px;
+	border: solid 3px;
+	border-radius: 10%;
+}
+
+.center {
+	text-align: center;
+	background-color: #EAD9FF;
+}
+
+.margin {
+	margin-top: 20px;
+}
+
+.title {
+	font-weight: bold;
+}
+
+#a-tag {
+	color: #333333;
+}
+
+.btn-info {
+	margin: 0 46%;
+}
+
+.font-size {
+	font-size: 30px;
+}
+
+.indent {
+	margin-left: 30px;
+}

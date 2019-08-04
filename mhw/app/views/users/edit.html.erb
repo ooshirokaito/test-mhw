@@ -1,0 +1,19 @@
+<%= render "share/header" %>
+<div class="container">
+	<div class="cow">
+		<div class="col-xs-12">
+			<div class="title">
+				<b class="width">編集ページ</b>
+			</div>
+			<div class="indent">
+				<%= form_for(@user) do |f| %>
+					<h3>Name</h3>
+					<%= f.text_field :name %>
+					<h3>Email</h3>
+					<%= f.email_field :email %></br>
+					<%= f.submit "更新する", class: "btn btn-success margin" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
